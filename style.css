@@ -2,8 +2,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
-header{
+body {
+    font-family: "Nunito", sans-serif;
     display: flex;
 }
+.sidebar{
+    display: block;
+    width: 25vh;
+    height: 100vh;
+    font-weight: 700;
+    background: rgb(10, 184, 88);
+}
+
+.tituloDashboard{
+    margin-top: 35px;
+    margin-left: 26px;
+}
+
+.menu{
+    display: block;
+}
+
+.header{
+    background: black;
+    width: 186vh;
+    height: 15vh;
+    color: white;
+}
+
+.centro{
+    background: grey;
+    height: 85vh;
+}
+
+
+
+
+
+
