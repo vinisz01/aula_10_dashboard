@@ -1,27 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia - Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="script.js" defer></script>
 </head>
-    <body>
-    <div class="sidebar">
-        <div class="tituloDashboard">
-            <h1><i class="fa-brands fa-spotify"></i><strong>Spotifyㅤ</strong></h1>
-        </div>
-    </div>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">💪 Academia</div>
+            <nav class="menu">
+                <a href="#" class="menu-item active" data-tab="dashboard">📊 Dashboard</a>
+                <a href="#" class="menu-item" data-tab="alunos">👥 Alunos</a>
+                <a href="#" class="menu-item" data-tab="adicionar">➕ Novo Aluno</a>
+            </nav>
+        </aside>
 
-    <div class="menu">
-        <div class="header">
-            <h2>59K</h2>
-        </div>
-        <div class="centro">
-            
-        </div>
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <!-- Tab: Dashboard -->
+            <div id="dashboard" class="tab active">
+                <h1>Dashboard</h1>
+                <div class="indicators-container">
+                    <div class="indicator-card">
+                        <h3>Total de Alunos</h3>
+                        <p class="indicator-value" id="totalAlunos">0</p>
+                    </div>
+                    <div class="indicator-card">
+                        <h3>Frequência Média</h3>
+                        <p class="indicator-value" id="mediaFrequencia">0</p>
+                    </div>
+                    <div class="indicator-card">
+                        <h3>Meses Totais</h3>
+                        <p class="indicator-value" id="totalMeses">0</p>
+                    </div>
+                    <div class="indicator-card">
+                        <h3>Média de Meses</h3>
+                        <p class="indicator-value" id="mediaMeses">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Alunos -->
+            <div id="alunos" class="tab">
+                <h1>Alunos Cadastrados</h1>
+                <div class="filters-container">
+                    <select id="filtroModalidade">
+                        <option value="">Todas as Modalidades</option>
+                        <option value="Musculação">Musculação</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Pilates">Pilates</option>
+                        <option value="Crossfit">Crossfit</option>
+                        <option value="Natação">Natação</option>
+                    </select>
+                    <input type="text" id="filtroAluno" placeholder="Buscar aluno...">
+                </div>
+                <div class="records-container" id="recordsContainer"></div>
+            </div>
+
+            <!-- Tab: Adicionar Aluno -->
+            <div id="adicionar" class="tab">
+                <h1>Adicionar Novo Aluno</h1>
+                <form id="formAluno" class="form">
+                    <div class="form-group">
+                        <label>Nome:</label>
+                        <input type="text" id="inputNome" placeholder="Ex: João Silva" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidade:</label>
+                        <select id="inputModalidade" required>
+                            <option value="">Selecione</option>
+                            <option value="Musculação">Musculação</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Pilates">Pilates</option>
+                            <option value="Crossfit">Crossfit</option>
+                            <option value="Natação">Natação</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Frequência Semanal:</label>
+                        <input type="number" id="inputFrequencia" placeholder="Ex: 3" min="1" max="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Meses de Matrícula:</label>
+                        <input type="number" id="inputMeses" placeholder="Ex: 6" min="1" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Adicionar Aluno</button>
+                </form>
+            </div>
+        </main>
     </div>
-    </body>
+</body>
 </html>
